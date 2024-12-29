@@ -8,56 +8,49 @@ type Props = {};
 const Navbar = (props: Props) => {
   const { palette } = useTheme();
   const [selected, setSelected] = useState("dashboard");
-  return (
-    <FlexBetween mb="0.25rem" p="0.5rem 0rem" color={palette.grey[300]}>
 
+  return (
+    <FlexBetween mb="0.25rem" p="0.5rem 0rem" color={palette.grey[100]}>
       <FlexBetween gap="2rem">
-        <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
+        {/* Dashboard Link */}
+        <Box>
           <Link
             to="/dashboard"
             onClick={() => setSelected("dashboard")}
             style={{
-              color: selected === "dashboard" ? "inherit" : palette.grey[700],
-              textDecoration: "inherit",
+              textDecoration: "none",
+              color: selected === "dashboard" ? palette.grey[100] : palette.grey[400],
             }}
+          >
+            <Box
+              sx={{
+                "&:hover": { color: palette.secondary[100] },
+                transition: "color 0.2s ease-in-out",
+              }}
             >
-            Dashboard
-          </Link>
+              Dashboard
             </Box>
-        <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
-          <Link
-            to="/createContract"
-            onClick={() => setSelected("createContract")}
-            style={{
-              color: selected === "createContract" ? "inherit" : palette.grey[700],
-              textDecoration: "inherit",
-            }}
-            >
-            Create Contract
           </Link>
-            </Box>
-        {/* <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
-          <Link
-            to="/makeTransaction"
-            onClick={() => setSelected("makeTransaction")}
-            style={{
-              color: selected === "makeTransaction" ? "inherit" : palette.grey[700],
-              textDecoration: "inherit",
-            }}
-            >
-            Make Payment
-          </Link>
-            </Box> */}
-              <Box sx={{ "&:hover": { color: palette.primary[100] } }}>
+        </Box>
+
+        {/* Log Transaction Link */}
+        <Box>
           <Link
             to="/logTransaction"
             onClick={() => setSelected("logTransaction")}
             style={{
-              color: selected === "logTransaction" ? "inherit" : palette.grey[700],
-              textDecoration: "inherit",
+              textDecoration: "none",
+              color: selected === "logTransaction" ? palette.grey[100] : palette.grey[400],
             }}
           >
-            Log Transaction
+            <Box
+              sx={{
+                "&:hover": { color: palette.secondary[100] },
+                transition: "color 0.2s ease-in-out",
+              }}
+            >
+              Log Transaction
+            </Box>
           </Link>
         </Box>
       </FlexBetween>
