@@ -27,3 +27,5 @@ https://vimeo.com/1042895489?share=copy#t=0
 6. Run localchain using ```anvil``` and deploy contracts using ```forge script script/Deploy.s.sol --fork-url http://localhost:8545 --private-key <PRIVATE_KEY> --broadcast```
 
 7. Open the app in browser.
+
+8. If using contract through some other means, change the default contract address```contractAddress``` in contractContext.tsx present in connection folder or src in the frontend.
