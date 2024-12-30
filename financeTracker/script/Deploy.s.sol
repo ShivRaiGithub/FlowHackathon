@@ -6,8 +6,8 @@ import {FinanceSystem} from "../src/FinanceSystem.sol";
 
 contract Deploy is Script {
     function run() external returns (FinanceSystem) {
-        address owner = address(0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266);
-        vm.startBroadcast(0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80);
+        address owner = address(msg.sender);
+        vm.startBroadcast(msg.sender);
         FinanceSystem fs = new FinanceSystem("MyOrg", owner);
 
         // Add tracked accounts
@@ -52,3 +52,4 @@ contract Deploy is Script {
 }
 
 //  forge script script/Deploy.s.sol --fork-url http://localhost:8545 --private-key 0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80 --broadcast
+//  forge script script/Deploy.s.sol --rpc-url https://testnet.evm.nodes.onflow.org --private-key $PRIVATE_KEY --broadcast
