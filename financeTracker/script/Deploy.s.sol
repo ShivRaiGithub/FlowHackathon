@@ -31,6 +31,7 @@ contract Deploy is Script {
         fs.addTransaction(1500, "Payment for Services", accounts[3], accounts[1], true, 1711929600); // Apr 1, 2024
         fs.addTransaction(1200, "Freelancer Payment", accounts[1], accounts[2], false, 1714521600); // May 1, 2024
         fs.addTransaction(2500, "Product Sales", accounts[0], accounts[3], true, 1717200000); // Jun 1, 2024
+        fs.addTransaction(2500, "New Product Sales", accounts[0], accounts[3], true, 17172001000); // Jun 1, 2024
         fs.addTransaction(3000, "Consultation Fees", accounts[1], accounts[4], true, 1719792000); // Jul 1, 2024
         fs.addTransaction(500, "Office Supplies", accounts[2], 0x6543210fedcBA9876543210Fedcba9876543210f, false, 1722470400); // Aug 1, 2024
         fs.addTransaction(800, "Utility Bill Payment", 0x876543210AbcdeF9876543210abCdeF987654321, accounts[1], false, 1725148800); // Sep 1, 2024

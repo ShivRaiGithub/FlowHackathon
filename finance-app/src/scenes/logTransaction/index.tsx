@@ -30,8 +30,10 @@ const LogTransaction: React.FC = () => {
     if (contractInstance) {
       try {
         const parsedAmount = parseInt(transaction.amount);
-        const parsedTimestamp = new Date(transaction.timestamp).getTime();
-
+        console.log("Tx ts", transaction.timestamp);
+        const parsedTimestamp = new Date(transaction.timestamp).getTime()/1000;
+        console.log("ps tx",parsedTimestamp);
+        
         await contractInstance.addTransaction(
           parsedAmount,
           transaction.description,
@@ -152,7 +154,6 @@ const LogTransaction: React.FC = () => {
           cursor: "pointer"
         }}>Log Transaction</button>
 
-        {/* <button onClick={getRecent}> GET RECENT</button> */}
       </form>
     </DashboardBox>
   );
